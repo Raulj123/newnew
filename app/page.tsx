@@ -1,13 +1,12 @@
-import Lenis from "lenis"
-import Smooth from "./components/Smooth";
+import Smooth from "./helpers/Smooth";
+import Loader from "./helpers/Loader";
 
 export default function Home() {
   return (
     <>
-      <div className="h-screen bg-slate-300"></div>
-      <div className="h-screen bg-slate-400"></div>
-      <div className="h-screen bg-slate-500"></div>
-      <Smooth/>  
+      {/* <div className="h-screen bg-slate-300"></div> */}
+      <Smooth/>
+      <Loader/>
    </>
   );
 }
