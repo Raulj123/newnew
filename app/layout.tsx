@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { BIZ_UDPGothic, Kablammo } from "next/font/google";
-import Smooth from "./helpers/Smooth";
+import Smooth from "./Components/Smooth";
 
 export const metadata: Metadata = {
   title: "rjhome2",

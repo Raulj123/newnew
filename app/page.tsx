@@ -1,7 +1,7 @@
-import Loader from "./helpers/Loader";
-import Hero from "./helpers/Hero";
+import Loader from "./Components/Loader";
+import Hero from "./Components/Hero";
 import "@/app/globals.scss";
-import Nav from "./helpers/Nav";
+import Nav from "./Components/Nav";
 export default function Home() {
   return (
     <main className="mainC">

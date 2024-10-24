@@ -36,7 +36,8 @@ export default function Hero() {
       gsap.timeline()
       .from(".h-container", {opacity: 0,scale: 0.7, delay: 0.5})
      
-      .from(".text", {y: 10, stagger: 0.3, ease: "power2.in"})
+      .from(".text", {y: 10, ease: "power2.in"})
+      .from(".d", {y: 90, ease: "power2.in"})
   }, []);
 
   return (
@@ -54,7 +55,7 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        <p>Scroll down</p>
+        <p className="d">Scroll down</p>
       </section>
     </>
   );
