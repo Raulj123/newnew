@@ -1,12 +1,13 @@
-import Smooth from "./helpers/Smooth";
 import Loader from "./helpers/Loader";
-
+import Hero from "./helpers/Hero";
+import "@/app/globals.scss";
+import Nav from "./helpers/Nav";
 export default function Home() {
   return (
-    <>
-      {/* <div className="h-screen bg-slate-300"></div> */}
-      <Smooth/>
-      <Loader/>
-   </>
+    <main className="mainC">
+      <Nav/>
+      <Hero />
+      <Loader />
+    </main>
   );
 }
