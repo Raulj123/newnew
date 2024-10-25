@@ -33,11 +33,10 @@ export default function Hero() {
     //     ease: "elastic",
     //   })
     //   .from(".line4", { opacity: 0, ease: "power2.in"})
-      gsap.timeline()
-      .from(".h-container", {opacity: 0,scale: 0.7, delay: 0.5})
-     
-      .from(".text", {y: 10, ease: "power2.in"})
-      .from(".d", {y: 90, ease: "power2.in"})
+
+    gsap
+      .timeline()
+      .from(".h-container", { opacity: 0, scale: 0.7, delay: 0.5 });
   }, []);
 
   return (
@@ -55,7 +54,6 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        <p className="d">Scroll down</p>
       </section>
     </>
   );
