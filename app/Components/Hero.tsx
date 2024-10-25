@@ -2,12 +2,14 @@
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import "@/app/globals.scss";
 
 export default function Hero() {
   const container = useRef<HTMLDivElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
   useGSAP(() => {
+    gsap.registerPlugin(ScrollTrigger);
     const mouseM = (e: MouseEvent) => {
       const x = (e.clientX - window.innerWidth / 2) / 40;
       const y = (e.clientY - window.innerHeight / 2) / 40;
@@ -19,20 +21,17 @@ export default function Hero() {
         stagger: 1,
       });
     };
-
+    gsap.to(".h-container", {
+      opacity: 0,
+      scrollTrigger: {
+        trigger: ".h-container",
+        start: "top top",
+        end: "bottom top",
+        scrub: true,
+        markers: true,
+      },
+    });
     document.addEventListener("mousemove", mouseM);
-    // gsap
-    //   .timeline()
-    //   .from(".line1", { opacity: 0, delay: 0.6, ease: "power2.in" })
-    //   .from(".line2", { x: 100, opacity: 0, duration: 1, ease: "bounce" })
-    //   .from(".line3", {
-    //     x: 150,
-    //     rotate: 60,
-    //     opacity: 0,
-    //     duration: 1,
-    //     ease: "elastic",
-    //   })
-    //   .from(".line4", { opacity: 0, ease: "power2.in"})
 
     gsap
       .timeline()

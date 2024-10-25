@@ -8,6 +8,7 @@ export default function Home() {
       <Nav/>
       <Hero />
       <Loader />
+      <div style={{'height': '100vh'}}></div>
     </main>
   );
 }
