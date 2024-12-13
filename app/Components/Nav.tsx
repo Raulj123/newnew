@@ -12,7 +12,7 @@ export default function Nav() {
       .from(".p", { y: -29, delay: 0.7, duration: 0.6, ease: "power2.in" });
 
     const showAnimation = gsap
-      .from(".nav", {
+      .from("nav", {
         yPercent: -100,
         paused: true,
         duration: 0.2,
@@ -28,10 +28,9 @@ export default function Nav() {
     });
   }, []);
   return (
-    <nav className=".nav">
-      <p className="p">Hi</p>
-      <p className="p">blah</p>
-      <p className="p">meh</p>
+    <nav className="nav">
+      <p className="p">Rjhome2</p>
+      <p className="p">:)</p>
     </nav>
   );
 }

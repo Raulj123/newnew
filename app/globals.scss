@@ -1,5 +1,7 @@
-$back: #111010;
-
+$back: rgb(0, 0, 0);
+$text: rgb(255, 255, 255);
+$mouse: rgb(255, 255, 255);
+$headerColor: cadetblue;
 html {
   overflow-x: hidden;
 }
@@ -12,11 +14,13 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: white;
+  color: $text;
   padding: 16px;
   height: 10px;
-  background-color: #111010;
+  background-color: $back;
+  font-family: var(--font-biz);
 }
+
 .hero {
   padding-top: 3.5rem;
   padding-bottom: 4rem;
@@ -24,29 +28,33 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  text-align: center;
   background-color: $back;
-  p {
-    color: white;
-    position: absolute;
-    bottom: 0;
-    font-family: var(--font-kab);
-  }
+  flex-direction: column;
 
   .h-container {
     margin: 0 auto;
     width: 100%;
-    padding-left: 2.4rem;
-    padding-right: 2.4rem;
+    max-width: fit-content;
+    margin-inline: auto;
     text-align: center;
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     .text {
       display: flex;
       flex-direction: column;
       position: relative;
     }
-
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      p {
+        color: white;
+        margin: 0;
+        bottom: 0;
+        font-family: var(--font-biz);
+      }
+    }
     .font {
       font-size: 4rem;
       line-height: 2.3;
@@ -59,7 +67,88 @@ nav {
     }
   }
 }
+.tooltip {
+  position: absolute;
+  background-color: cadetblue;
+  top: -13px;
+}
+.model {
+  max-width: 500px;
+  max-width: fit-content;
+  margin-inline: auto;
+}
 
+.about {
+  margin-top: 30px;
+  max-width: fit-content;
+  margin-inline: auto;
+  min-height: 100vh;
+  padding: 0 clamp(1rem, 4vw, 2rem);
+  h1 {
+    color: $headerColor;
+    font-family: var(--font-biz);
+  }
+  p {
+    color: white;
+    font-family: var(--font-biz);
+  }
+  li {
+    color: white;
+    font-family: var(--font-biz);
+  }
+}
+
+.projects {
+  margin-top: 30px;
+  max-width: fit-content;
+  margin-inline: auto;
+  min-height: 50vh;
+  padding: 0 clamp(1rem, 4vw, 2rem);
+  h1 {
+    color: $headerColor;
+    font-family: var(--font-biz);
+  }
+  .projectCard {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    header {
+      color: $headerColor;
+      font-family: var(--font-biz);
+      display: flex;
+      justify-content: space-between;
+    }
+    p {
+      color: white;
+      margin: 1px;
+      font-family: var(--font-biz);
+    }
+    footer {
+      color: white;
+      font-family: var(--font-biz);
+    }
+  }
+}
+.contact {
+  margin-top: 30px;
+  max-width: fit-content;
+  margin-inline: auto;
+  min-height: 50vh;
+  padding: 0 clamp(1rem, 4vw, 2rem);
+  h1 {
+    color: $headerColor;
+    font-family: var(--font-biz);
+  }
+  p {
+    color: white;
+    margin: 1px;
+    font-family: var(--font-biz);
+  }
+  li {
+    color: white;
+    font-family: var(--font-biz);
+  }
+}
 .loader {
   width: 100%;
   position: fixed;
@@ -69,10 +158,55 @@ nav {
     height: 100%;
 
     path {
-      stroke: rgb(255, 255, 255);
+      stroke: $text;
       stroke-width: 1px;
-      fill: rgb(253, 253, 253);
+      fill: $text;
     }
+  }
+}
+
+.mouse {
+  background-color: $mouse;
+  height: 11px;
+  width: 11px;
+  position: fixed;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+
+  &::before {
+    content: "";
+    left: 0;
+    top: 0;
+    margin-left: -100%;
+    margin-top: -100%;
+    display: block;
+    width: 300%;
+    height: 300%;
+    background-color: rgb(240, 180, 227);
+    border-radius: 50%;
+    animation: pulse-ring 1.25s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.33);
+  }
+  80%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 
@@ -92,11 +226,22 @@ nav {
 }
 
 @media only screen and (min-width: 500px) {
+  .hero {
+    padding-top: 0.5rem;
+    .h-container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
 }
 
 @media only screen and (min-width: 800px) {
-  .font {
-    font-size: 40rem;
+  .hero {
+    padding-top: 1.5rem;
+    .h-container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
   }
 }
 
