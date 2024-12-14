@@ -6,15 +6,15 @@ export default function Projects() {
     <div className="projects">
       <h1>Projects</h1>
       {Info.map((project) => (
-        <div className="projectCard">
-          <React.Fragment key={project.id}>
+        <div className="projectCard" key={project.id}>
+         
             <header>
               {project.title}
               <a href={project.link}>Link</a>
             </header>
             <p>{project.description}</p>
             <footer>{project.languages}</footer>
-          </React.Fragment>
+          
         </div>
       ))}
     </div>

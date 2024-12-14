@@ -10,7 +10,7 @@ export default function About() {
       </p>
       <p>My interest currenltly are..</p>
       <ul>
-        <li key={1}>Solving programming puzzles, although I'm not the best.</li>
+        <li key={1}>Solving programming puzzles, although I&apos;m not the best.</li>
         <li key={2}>3d modeling(blender, I am bad at this)</li>
         <li key={3}>System design</li>
         <li key={4}>Anime (AOT on top)</li>

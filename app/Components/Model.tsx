@@ -18,9 +18,9 @@ export default function Model() {
     { rotation: new THREE.Euler(0, Math.PI / 4, 0) },
   ];
   const cont = useRef<HTMLDivElement>(null);
+  useEffect(() => {
   const loader = new GLTFLoader();
   const scene = new THREE.Scene();
-  useEffect(() => {
     const camera = new THREE.PerspectiveCamera(
       45,
       window.innerWidth / window.innerHeight,
@@ -52,6 +52,7 @@ export default function Model() {
       camera.updateProjectionMatrix();
       renderer.setSize(window.innerWidth, window.innerHeight);
     };
+
 
     window.addEventListener("resize", handleResize);
     loader.load(
